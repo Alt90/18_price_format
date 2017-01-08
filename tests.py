@@ -40,6 +40,10 @@ class PriceTestCase(unittest.TestCase):
         price = format_price('1,2354453E+4')
         self.assertEqual(price, '12 354.45')
 
+    def test_incorrect_value(self):
+        price = format_price('1,235б453E+4')
+        self.assertEqual(price, 'Incorrect value')
+
 
 if __name__ == '__main__':
     unittest.main()
